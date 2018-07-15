@@ -10,6 +10,7 @@ import UIKit
 
 class ProvinceViewController: UITableViewController {
     
+    // Variable
     var sortedProvDict: [(key:String, value: [(orderProvince: String, orderYear: String, orderNumber: String, totalPrice: String, customerName: String)])] = []
     
     
@@ -18,16 +19,20 @@ class ProvinceViewController: UITableViewController {
     }
 
 
+    
     // MARK: - Table view data source
     
+    // Number of sections
     override func numberOfSections(in tableView: UITableView) -> Int {
         return sortedProvDict.count
     }
     
+    // Number of rows in section
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return sortedProvDict[section].value.count
     }
     
+    // Cell for row at indexPath
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         let cellData = sortedProvDict[indexPath.section].value[indexPath.row]
@@ -36,17 +41,26 @@ class ProvinceViewController: UITableViewController {
         return cell
     }
     
+    // Did select row at indexPath
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    
     
     //MARK: - Section Header
     
+    // Title for header in section
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return sortedProvDict[section].key + " : \(sortedProvDict[section].value.count) Order(s)"
     }
     
+    // height for header in section
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 41.5
+        return 42
     }
     
+    // Header view
     override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         let header = view as! UITableViewHeaderFooterView
         header.textLabel?.font = UIFont.systemFont(ofSize: 20, weight: UIFont.Weight.medium);

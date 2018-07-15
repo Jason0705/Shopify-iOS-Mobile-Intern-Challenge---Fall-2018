@@ -12,8 +12,8 @@ import SwiftyJSON
 
 class SummaryViewController: UIViewController {
     
+    // Constants & Variables
     let orderDataModel = OrderDataModel()
-    
     
     var orderDict: [(orderProvince: String, orderYear: String, orderNumber: String, totalPrice: String, customerName: String)] = []
     var groupedProvDict = [String : [(orderProvince: String, orderYear: String, orderNumber: String, totalPrice: String, customerName: String)]]()
@@ -22,6 +22,7 @@ class SummaryViewController: UIViewController {
     var firstTen2017Orders: [(orderProvince: String, orderYear: String, orderNumber: String, totalPrice: String, customerName: String)] = []
     
     
+    // Outlets
     @IBOutlet weak var provinceView: UIView!
     @IBOutlet weak var yearView: UIView!
     
@@ -32,13 +33,17 @@ class SummaryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        getOrderData()
+        
+        // Style
+        Shadow()
+        
+        // Set self as Delegate and Datasource
         provinceTableView.delegate = self
         provinceTableView.dataSource = self
         
         yearTableView.delegate = self
         yearTableView.dataSource = self
-        
-        getOrderData()
     }
     
     
@@ -60,9 +65,10 @@ class SummaryViewController: UIViewController {
     }
     
     
+    
     // MARK: - JSON Parsing
     
-    
+    // Parse JSON data
     func createOrderDict(with json: JSON) {
         guard !json.isEmpty else {fatalError("json unavailible!")}
         
@@ -93,7 +99,6 @@ class SummaryViewController: UIViewController {
             let newElement = (orderProvince: province, orderYear: orderDataModel.orderYear, orderNumber: orderDataModel.orderNumber, totalPrice: orderDataModel.totalPrice, customerName: customer)
             
             orderDict.append(newElement)
-            
         }
         
         groupByProvince()
@@ -130,10 +135,12 @@ class SummaryViewController: UIViewController {
     
 
     
+    // MARK: - Button Press & Segue
     @IBAction func orderByProvinceButtonPressed(_ sender: UIButton) {
         performSegue(withIdentifier: "goToOrderByProvince", sender: self)
     }
     
+    // Prepare for segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToOrderByProvince" {
             
@@ -143,8 +150,23 @@ class SummaryViewController: UIViewController {
         }
     }
     
+    
+    
+    //MARK: - Style
+    // Adding shadow to view containers
+    func Shadow() {
+        provinceView.layer.shadowColor = UIColor.black.cgColor
+        provinceView.layer.shadowOffset = CGSize(width: 5, height: 5)
+        provinceView.layer.shadowRadius = 5
+        provinceView.layer.shadowOpacity = 0.2
+        
+        yearView.layer.shadowColor = UIColor.black.cgColor
+        yearView.layer.shadowOffset = CGSize(width: 5, height: 5)
+        yearView.layer.shadowRadius = 5
+        yearView.layer.shadowOpacity = 0.2
+    }
+    
 }
-
 
 
 
@@ -153,6 +175,7 @@ class SummaryViewController: UIViewController {
 
 extension SummaryViewController: UITableViewDelegate, UITableViewDataSource {
     
+    // Number of sections
     func numberOfSections(in tableView: UITableView) -> Int {
         if tableView == self.provinceTableView {
             return sortedProvDict.count
@@ -163,6 +186,7 @@ extension SummaryViewController: UITableViewDelegate, UITableViewDataSource {
         return 0
     }
     
+    // Number of rows in section
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tableView == self.provinceTableView {
             return 1
@@ -173,6 +197,7 @@ extension SummaryViewController: UITableViewDelegate, UITableViewDataSource {
         return 0
     }
     
+    // Cell for row at indexPath
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell = UITableViewCell()
         
@@ -192,12 +217,16 @@ extension SummaryViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    // Did select row at indexPath
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
     
+    
     //MARK: - Section Header
+    
+    // Title for header in section
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if tableView == self.provinceTableView {
             return sortedProvDict[section].key
@@ -208,10 +237,12 @@ extension SummaryViewController: UITableViewDelegate, UITableViewDataSource {
         return nil
     }
     
+    // Height for Header in section
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 41.5
+        return 42
     }
     
+    // Header View
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         let header = view as! UITableViewHeaderFooterView
         header.textLabel?.font = UIFont.systemFont(ofSize: 20, weight: UIFont.Weight.medium);

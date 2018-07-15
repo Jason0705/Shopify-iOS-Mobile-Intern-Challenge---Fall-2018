@@ -15,7 +15,6 @@
 		D1C0AD8620FAC55400799F4A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1C0AD8420FAC55400799F4A /* LaunchScreen.storyboard */; };
 		D1C0AD8E20FACB5400799F4A /* ProvinceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C0AD8D20FACB5400799F4A /* ProvinceViewController.swift */; };
 		D1C0AD9420FAD9C300799F4A /* OrderDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C0AD9320FAD9C300799F4A /* OrderDataModel.swift */; };
-		D1C0AD9820FADE4E00799F4A /* GetOrderData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C0AD9720FADE4E00799F4A /* GetOrderData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,7 +29,6 @@
 		D1C0AD8720FAC55400799F4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D1C0AD8D20FACB5400799F4A /* ProvinceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProvinceViewController.swift; sourceTree = "<group>"; };
 		D1C0AD9320FAD9C300799F4A /* OrderDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDataModel.swift; sourceTree = "<group>"; };
-		D1C0AD9720FADE4E00799F4A /* GetOrderData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetOrderData.swift; sourceTree = "<group>"; };
 		EEF7AAE5DCE83D0456795F90 /* Pods-Shopify iOS Mobile Intern Challenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shopify iOS Mobile Intern Challenge.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Shopify iOS Mobile Intern Challenge/Pods-Shopify iOS Mobile Intern Challenge.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -90,7 +88,6 @@
 				D1C0AD9120FAD95600799F4A /* Controllers */,
 				D1C0AD9220FAD96100799F4A /* Supporting File */,
 				D1C0AD8720FAC55400799F4A /* Info.plist */,
-				D1C0AD9720FADE4E00799F4A /* GetOrderData.swift */,
 			);
 			path = "Shopify iOS Mobile Intern Challenge";
 			sourceTree = "<group>";
@@ -245,7 +242,6 @@
 			files = (
 				D1C0AD7E20FAC55300799F4A /* SummaryViewController.swift in Sources */,
 				D1C0AD8E20FACB5400799F4A /* ProvinceViewController.swift in Sources */,
-				D1C0AD9820FADE4E00799F4A /* GetOrderData.swift in Sources */,
 				D1C0AD9420FAD9C300799F4A /* OrderDataModel.swift in Sources */,
 				D1C0AD7C20FAC55300799F4A /* AppDelegate.swift in Sources */,
 			);
