@@ -28,7 +28,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="axj-2x-COH" userLabel="Province View">
                                                 <rect key="frame" x="0.0" y="0.0" width="343" height="251.5"/>
                                                 <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="VsT-kW-Dad">
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="VsT-kW-Dad">
                                                         <rect key="frame" x="0.0" y="0.0" width="343" height="251.5"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6lP-Fw-mst" userLabel="Province Title View">
@@ -47,10 +47,10 @@
                                                                 </subviews>
                                                                 <color key="backgroundColor" red="0.29803921570000003" green="0.58431372550000005" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="trailing" secondItem="93b-XW-tVW" secondAttribute="trailing" id="7X2-u4-H7y"/>
-                                                                    <constraint firstItem="93b-XW-tVW" firstAttribute="leading" secondItem="6lP-Fw-mst" secondAttribute="leading" id="Fty-5W-7Wn"/>
-                                                                    <constraint firstItem="93b-XW-tVW" firstAttribute="top" secondItem="6lP-Fw-mst" secondAttribute="top" id="bhO-6Y-q5s"/>
-                                                                    <constraint firstAttribute="bottom" secondItem="93b-XW-tVW" secondAttribute="bottom" id="nJ9-gD-JwO"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="93b-XW-tVW" secondAttribute="bottom" id="BqC-YK-1D9"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="93b-XW-tVW" secondAttribute="trailing" id="Eo4-WK-Td0"/>
+                                                                    <constraint firstItem="93b-XW-tVW" firstAttribute="leading" secondItem="6lP-Fw-mst" secondAttribute="leading" id="S8T-nx-Fux"/>
+                                                                    <constraint firstItem="93b-XW-tVW" firstAttribute="top" secondItem="6lP-Fw-mst" secondAttribute="top" id="ZPb-tp-0Er"/>
                                                                 </constraints>
                                                             </view>
                                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NkY-uB-8ds" userLabel="Province Table View">
@@ -69,22 +69,22 @@
                                                             </tableView>
                                                         </subviews>
                                                         <constraints>
-                                                            <constraint firstItem="NkY-uB-8ds" firstAttribute="height" secondItem="6lP-Fw-mst" secondAttribute="height" multiplier="5:1" id="OKs-w7-7Dw"/>
+                                                            <constraint firstItem="NkY-uB-8ds" firstAttribute="height" secondItem="6lP-Fw-mst" secondAttribute="height" multiplier="5:1" id="QC8-Yo-tUc"/>
                                                         </constraints>
                                                     </stackView>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstItem="VsT-kW-Dad" firstAttribute="top" secondItem="axj-2x-COH" secondAttribute="top" id="Sar-JK-qbr"/>
-                                                    <constraint firstItem="VsT-kW-Dad" firstAttribute="leading" secondItem="axj-2x-COH" secondAttribute="leading" id="T0C-JS-ZN8"/>
-                                                    <constraint firstAttribute="bottom" secondItem="VsT-kW-Dad" secondAttribute="bottom" id="gue-Wb-86e"/>
-                                                    <constraint firstAttribute="trailing" secondItem="VsT-kW-Dad" secondAttribute="trailing" id="wpz-lH-rET"/>
+                                                    <constraint firstItem="VsT-kW-Dad" firstAttribute="top" secondItem="axj-2x-COH" secondAttribute="top" id="1ot-At-YIp"/>
+                                                    <constraint firstAttribute="trailing" secondItem="VsT-kW-Dad" secondAttribute="trailing" id="kfc-77-zBL"/>
+                                                    <constraint firstAttribute="bottom" secondItem="VsT-kW-Dad" secondAttribute="bottom" id="qlF-JZ-KRc"/>
+                                                    <constraint firstItem="VsT-kW-Dad" firstAttribute="leading" secondItem="axj-2x-COH" secondAttribute="leading" id="v3J-T4-35q"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PUy-Dx-eaH" userLabel="Year View">
                                                 <rect key="frame" x="0.0" y="267.5" width="343" height="251.5"/>
                                                 <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="E2O-qV-JOf">
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="E2O-qV-JOf">
                                                         <rect key="frame" x="0.0" y="0.0" width="343" height="251.5"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mNB-Cu-m4s" userLabel="Year Title View">
@@ -100,10 +100,10 @@
                                                                 </subviews>
                                                                 <color key="backgroundColor" red="0.29803921570000003" green="0.58431372550000005" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <constraints>
-                                                                    <constraint firstItem="gEK-1L-2mJ" firstAttribute="top" secondItem="mNB-Cu-m4s" secondAttribute="top" id="QPn-r2-PZu"/>
-                                                                    <constraint firstAttribute="trailing" secondItem="gEK-1L-2mJ" secondAttribute="trailing" id="hoc-pX-xeJ"/>
-                                                                    <constraint firstItem="gEK-1L-2mJ" firstAttribute="leading" secondItem="mNB-Cu-m4s" secondAttribute="leading" id="nRu-nb-3Ja"/>
-                                                                    <constraint firstAttribute="bottom" secondItem="gEK-1L-2mJ" secondAttribute="bottom" id="ui8-1d-AQR"/>
+                                                                    <constraint firstItem="gEK-1L-2mJ" firstAttribute="leading" secondItem="mNB-Cu-m4s" secondAttribute="leading" id="2Wz-vI-jfG"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="gEK-1L-2mJ" secondAttribute="bottom" id="bDD-gS-xcY"/>
+                                                                    <constraint firstItem="gEK-1L-2mJ" firstAttribute="top" secondItem="mNB-Cu-m4s" secondAttribute="top" id="kKb-cA-M5g"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="gEK-1L-2mJ" secondAttribute="trailing" id="qev-AP-h5A"/>
                                                                 </constraints>
                                                             </view>
                                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0sG-Uo-Fia" userLabel="Year Table View">
@@ -122,16 +122,16 @@
                                                             </tableView>
                                                         </subviews>
                                                         <constraints>
-                                                            <constraint firstItem="0sG-Uo-Fia" firstAttribute="height" secondItem="mNB-Cu-m4s" secondAttribute="height" multiplier="5:1" id="nfs-QX-ekR"/>
+                                                            <constraint firstItem="0sG-Uo-Fia" firstAttribute="height" secondItem="mNB-Cu-m4s" secondAttribute="height" multiplier="5:1" id="zhk-Qd-ec7"/>
                                                         </constraints>
                                                     </stackView>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="trailing" secondItem="E2O-qV-JOf" secondAttribute="trailing" id="Hyd-t5-h8d"/>
-                                                    <constraint firstAttribute="bottom" secondItem="E2O-qV-JOf" secondAttribute="bottom" id="PWI-7d-oMj"/>
-                                                    <constraint firstItem="E2O-qV-JOf" firstAttribute="top" secondItem="PUy-Dx-eaH" secondAttribute="top" id="aBa-12-GWw"/>
-                                                    <constraint firstItem="E2O-qV-JOf" firstAttribute="leading" secondItem="PUy-Dx-eaH" secondAttribute="leading" id="oSq-Uc-NAl"/>
+                                                    <constraint firstItem="E2O-qV-JOf" firstAttribute="leading" secondItem="PUy-Dx-eaH" secondAttribute="leading" id="AtZ-0I-8S2"/>
+                                                    <constraint firstAttribute="trailing" secondItem="E2O-qV-JOf" secondAttribute="trailing" id="B3Y-X4-FQt"/>
+                                                    <constraint firstItem="E2O-qV-JOf" firstAttribute="top" secondItem="PUy-Dx-eaH" secondAttribute="top" id="Fpr-pX-j18"/>
+                                                    <constraint firstAttribute="bottom" secondItem="E2O-qV-JOf" secondAttribute="bottom" id="y2m-cv-x4K"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -139,19 +139,19 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="ra1-OB-1e2" secondAttribute="trailing" id="07y-cB-1Eu"/>
-                                    <constraint firstItem="ra1-OB-1e2" firstAttribute="leading" secondItem="dvL-FS-dck" secondAttribute="leading" id="61T-Yp-bGE"/>
-                                    <constraint firstItem="ra1-OB-1e2" firstAttribute="top" secondItem="dvL-FS-dck" secondAttribute="top" id="KS9-Le-qyf"/>
-                                    <constraint firstAttribute="bottom" secondItem="ra1-OB-1e2" secondAttribute="bottom" id="iId-Nj-OYf"/>
+                                    <constraint firstAttribute="bottom" secondItem="ra1-OB-1e2" secondAttribute="bottom" id="bTD-Gq-V0A"/>
+                                    <constraint firstItem="ra1-OB-1e2" firstAttribute="leading" secondItem="dvL-FS-dck" secondAttribute="leading" id="c1u-Qb-yOx"/>
+                                    <constraint firstAttribute="trailing" secondItem="ra1-OB-1e2" secondAttribute="trailing" id="cbc-x1-d0e"/>
+                                    <constraint firstItem="ra1-OB-1e2" firstAttribute="top" secondItem="dvL-FS-dck" secondAttribute="top" id="pid-JZ-x7h"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="dvL-FS-dck" secondAttribute="bottom" constant="16" id="Jjy-gM-6VY"/>
-                            <constraint firstItem="dvL-FS-dck" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Qmv-Eh-ut8"/>
-                            <constraint firstItem="dvL-FS-dck" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="SoP-v6-jmL"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dvL-FS-dck" secondAttribute="trailing" constant="16" id="fnk-Kp-ZSr"/>
+                            <constraint firstItem="dvL-FS-dck" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="3lm-4Q-cfo"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="dvL-FS-dck" secondAttribute="bottom" constant="16" id="Bv2-vg-XZa"/>
+                            <constraint firstItem="dvL-FS-dck" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="kuN-Ij-tJm"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dvL-FS-dck" secondAttribute="trailing" constant="16" id="vXO-Am-EF2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
