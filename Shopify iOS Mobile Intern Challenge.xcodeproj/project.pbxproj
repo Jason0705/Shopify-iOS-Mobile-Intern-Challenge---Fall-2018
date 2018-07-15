@@ -14,6 +14,7 @@
 		D1C0AD8320FAC55400799F4A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1C0AD8220FAC55400799F4A /* Assets.xcassets */; };
 		D1C0AD8620FAC55400799F4A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1C0AD8420FAC55400799F4A /* LaunchScreen.storyboard */; };
 		D1C0AD8E20FACB5400799F4A /* ProvinceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C0AD8D20FACB5400799F4A /* ProvinceViewController.swift */; };
+		D1C0AD9420FAD9C300799F4A /* OrderDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C0AD9320FAD9C300799F4A /* OrderDataModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		D1C0AD8520FAC55400799F4A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D1C0AD8720FAC55400799F4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D1C0AD8D20FACB5400799F4A /* ProvinceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProvinceViewController.swift; sourceTree = "<group>"; };
+		D1C0AD9320FAD9C300799F4A /* OrderDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDataModel.swift; sourceTree = "<group>"; };
 		EEF7AAE5DCE83D0456795F90 /* Pods-Shopify iOS Mobile Intern Challenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shopify iOS Mobile Intern Challenge.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Shopify iOS Mobile Intern Challenge/Pods-Shopify iOS Mobile Intern Challenge.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -81,14 +83,47 @@
 			isa = PBXGroup;
 			children = (
 				D1C0AD7B20FAC55300799F4A /* AppDelegate.swift */,
-				D1C0AD7D20FAC55300799F4A /* SummaryViewController.swift */,
-				D1C0AD8D20FACB5400799F4A /* ProvinceViewController.swift */,
-				D1C0AD7F20FAC55300799F4A /* Main.storyboard */,
-				D1C0AD8220FAC55400799F4A /* Assets.xcassets */,
-				D1C0AD8420FAC55400799F4A /* LaunchScreen.storyboard */,
+				D1C0AD8F20FAD94500799F4A /* Model */,
+				D1C0AD9020FAD94F00799F4A /* View */,
+				D1C0AD9120FAD95600799F4A /* Controllers */,
+				D1C0AD9220FAD96100799F4A /* Supporting File */,
 				D1C0AD8720FAC55400799F4A /* Info.plist */,
 			);
 			path = "Shopify iOS Mobile Intern Challenge";
+			sourceTree = "<group>";
+		};
+		D1C0AD8F20FAD94500799F4A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D1C0AD9320FAD9C300799F4A /* OrderDataModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D1C0AD9020FAD94F00799F4A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D1C0AD7F20FAC55300799F4A /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D1C0AD9120FAD95600799F4A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D1C0AD7D20FAC55300799F4A /* SummaryViewController.swift */,
+				D1C0AD8D20FACB5400799F4A /* ProvinceViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		D1C0AD9220FAD96100799F4A /* Supporting File */ = {
+			isa = PBXGroup;
+			children = (
+				D1C0AD8220FAC55400799F4A /* Assets.xcassets */,
+				D1C0AD8420FAC55400799F4A /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting File";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,6 +242,7 @@
 			files = (
 				D1C0AD7E20FAC55300799F4A /* SummaryViewController.swift in Sources */,
 				D1C0AD8E20FACB5400799F4A /* ProvinceViewController.swift in Sources */,
+				D1C0AD9420FAD9C300799F4A /* OrderDataModel.swift in Sources */,
 				D1C0AD7C20FAC55300799F4A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
