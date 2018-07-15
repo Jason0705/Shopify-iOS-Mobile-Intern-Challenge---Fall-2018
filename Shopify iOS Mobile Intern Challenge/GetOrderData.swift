@@ -12,17 +12,18 @@ import SwiftyJSON
 
 class GetOrderData {
     
+    let orderDataModel = OrderDataModel()
+    
+    
     //var data : JSON = []
     var orderDict: [(orderProvince: String, orderYear: String, orderNumber: String, totalPrice: String, customerName: String)] = []
-    
-    
-    let orderDataModel = OrderDataModel()
     
     
     // MARK: - Networking
     
     // getOrderData Method
     func getOrderData() {
+        
         Alamofire.request("https://shopicruit.myshopify.com/admin/orders.json?page=1&access_token=c32313df0d0ef512ca64d5b336a0d7c6", method: .get).responseJSON {
             response in
             if response.result.isSuccess{
@@ -31,7 +32,7 @@ class GetOrderData {
                 //print(orderJSON)
                 self.createOrderDict(with: orderJSON)
                 print("success")
-                print(self.orderDict)
+                //print(self.orderDict)
             } else {
                 print("Couldnt process JSON response, Error: \(response.result.error)")
             }
