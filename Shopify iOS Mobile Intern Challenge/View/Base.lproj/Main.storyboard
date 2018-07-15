@@ -161,7 +161,7 @@
                         <outlet property="provinceView" destination="axj-2x-COH" id="ekI-2Z-lzB"/>
                         <outlet property="yearTableView" destination="0sG-Uo-Fia" id="oxI-0C-Mhr"/>
                         <outlet property="yearView" destination="PUy-Dx-eaH" id="B66-rI-UNf"/>
-                        <segue destination="WTw-cZ-RcB" kind="show" id="iKX-Rj-7pr"/>
+                        <segue destination="WTw-cZ-RcB" kind="show" identifier="goToOrderByProvince" id="iKX-Rj-7pr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -177,7 +177,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="sMC-4M-B84">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="sMC-4M-B84">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="sMC-4M-B84" id="Vqq-1h-J9a">

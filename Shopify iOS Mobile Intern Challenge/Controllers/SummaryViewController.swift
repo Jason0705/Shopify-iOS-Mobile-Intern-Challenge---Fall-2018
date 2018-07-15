@@ -131,6 +131,16 @@ class SummaryViewController: UIViewController {
 
     
     @IBAction func orderByProvinceButtonPressed(_ sender: UIButton) {
+        performSegue(withIdentifier: "goToOrderByProvince", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToOrderByProvince" {
+            
+            let VC = segue.destination as! ProvinceViewController
+            
+            VC.sortedProvDict = sortedProvDict
+        }
     }
     
 }
