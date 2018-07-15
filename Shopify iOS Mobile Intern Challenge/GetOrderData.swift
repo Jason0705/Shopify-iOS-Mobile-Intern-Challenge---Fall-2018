@@ -19,6 +19,7 @@ class GetOrderData {
     var groupedProvDict = [String : [(orderProvince: String, orderYear: String, orderNumber: String, totalPrice: String, customerName: String)]]()
     var groupedYearDict = [String : [(orderProvince: String, orderYear: String, orderNumber: String, totalPrice: String, customerName: String)]]()
     var sortedProvDict: [(key:String, value: [(orderProvince: String, orderYear: String, orderNumber: String, totalPrice: String, customerName: String)])] = []
+    var firstTen2017Orders: [(orderProvince: String, orderYear: String, orderNumber: String, totalPrice: String, customerName: String)] = []
     
     
     // MARK: - Networking
@@ -77,6 +78,7 @@ class GetOrderData {
         groupByProvince()
         groupByYear()
         sortProvinces()
+        getFirstTen2017Orders()
         
     }
     
@@ -91,6 +93,16 @@ class GetOrderData {
     
     func sortProvinces() {
         sortedProvDict = groupedProvDict.sorted(by: { $0.0 < $1.0 })
+    }
+    
+    func getFirstTen2017Orders() {
+        var ordersOf2017 = groupedYearDict["2017"]!
+        if ordersOf2017.count > 10 {
+            let slice = ordersOf2017.prefix(10)
+            firstTen2017Orders = Array(slice)
+        } else {
+            firstTen2017Orders = ordersOf2017
+        }
     }
     
 }
