@@ -12,14 +12,23 @@ import SwiftyJSON
 
 class SummaryViewController: UIViewController {
     
+    struct OrderData {
+        var orderProvince = ""
+        var orderYear = ""
+        var orderNumber = ""
+        var totalPrice = ""
+        var customerName = ""
+    }
+    
+    
     // Constants & Variables
     let orderDataModel = OrderDataModel()
     
-    var orderDict: [(orderProvince: String, orderYear: String, orderNumber: String, totalPrice: String, customerName: String)] = []
-    var groupedProvDict = [String : [(orderProvince: String, orderYear: String, orderNumber: String, totalPrice: String, customerName: String)]]()
-    var groupedYearDict = [String : [(orderProvince: String, orderYear: String, orderNumber: String, totalPrice: String, customerName: String)]]()
-    var sortedProvDict: [(key:String, value: [(orderProvince: String, orderYear: String, orderNumber: String, totalPrice: String, customerName: String)])] = []
-    var firstTen2017Orders: [(orderProvince: String, orderYear: String, orderNumber: String, totalPrice: String, customerName: String)] = []
+    var orderDict = [OrderData]()
+    var groupedProvDict = [String : [OrderData]]()
+    var groupedYearDict = [String : [OrderData]]()
+    var sortedProvDict: [(key:String, value: [OrderData])] = []
+    var firstTen2017Orders = [OrderData]()
     
     
     // Outlets
@@ -96,7 +105,7 @@ class SummaryViewController: UIViewController {
                 customer = "Name Unavailible"
             }
             
-            let newElement = (orderProvince: province, orderYear: orderDataModel.orderYear, orderNumber: orderDataModel.orderNumber, totalPrice: orderDataModel.totalPrice, customerName: customer)
+            let newElement = OrderData(orderProvince: province, orderYear: orderDataModel.orderYear, orderNumber: orderDataModel.orderNumber, totalPrice: orderDataModel.totalPrice, customerName: customer)
             
             orderDict.append(newElement)
         }

@@ -11,7 +11,7 @@ import UIKit
 class ProvinceViewController: UITableViewController {
     
     // Variable
-    var sortedProvDict: [(key:String, value: [(orderProvince: String, orderYear: String, orderNumber: String, totalPrice: String, customerName: String)])] = []
+    var sortedProvDict: [(key:String, value: [SummaryViewController.OrderData])] = []
     
     
     override func viewDidLoad() {

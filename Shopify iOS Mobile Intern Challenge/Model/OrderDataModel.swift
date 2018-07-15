@@ -9,11 +9,12 @@
 import UIKit
 
 class OrderDataModel {
-    
+
     var province : String = ""
     var orderYear : String = ""
     var orderNumber : String = ""
     var customerName : String = ""
     var totalPrice : String = ""
-    
+
 }
+
