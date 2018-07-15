@@ -8,20 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		D1C0AD7C20FAC55300799F4A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C0AD7B20FAC55300799F4A /* AppDelegate.swift */; };
-		D1C0AD7E20FAC55300799F4A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C0AD7D20FAC55300799F4A /* ViewController.swift */; };
+		D1C0AD7E20FAC55300799F4A /* SummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C0AD7D20FAC55300799F4A /* SummaryViewController.swift */; };
 		D1C0AD8120FAC55300799F4A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1C0AD7F20FAC55300799F4A /* Main.storyboard */; };
 		D1C0AD8320FAC55400799F4A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1C0AD8220FAC55400799F4A /* Assets.xcassets */; };
 		D1C0AD8620FAC55400799F4A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1C0AD8420FAC55400799F4A /* LaunchScreen.storyboard */; };
+		D1C0AD8E20FACB5400799F4A /* ProvinceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C0AD8D20FACB5400799F4A /* ProvinceViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D1C0AD7820FAC55300799F4A /* Shopify iOS Mobile Intern Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Shopify iOS Mobile Intern Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1C0AD7B20FAC55300799F4A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D1C0AD7D20FAC55300799F4A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D1C0AD7D20FAC55300799F4A /* SummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryViewController.swift; sourceTree = "<group>"; };
 		D1C0AD8020FAC55300799F4A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D1C0AD8220FAC55400799F4A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D1C0AD8520FAC55400799F4A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D1C0AD8720FAC55400799F4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D1C0AD8D20FACB5400799F4A /* ProvinceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProvinceViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,7 +57,8 @@
 			isa = PBXGroup;
 			children = (
 				D1C0AD7B20FAC55300799F4A /* AppDelegate.swift */,
-				D1C0AD7D20FAC55300799F4A /* ViewController.swift */,
+				D1C0AD7D20FAC55300799F4A /* SummaryViewController.swift */,
+				D1C0AD8D20FACB5400799F4A /* ProvinceViewController.swift */,
 				D1C0AD7F20FAC55300799F4A /* Main.storyboard */,
 				D1C0AD8220FAC55400799F4A /* Assets.xcassets */,
 				D1C0AD8420FAC55400799F4A /* LaunchScreen.storyboard */,
@@ -135,7 +138,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D1C0AD7E20FAC55300799F4A /* ViewController.swift in Sources */,
+				D1C0AD7E20FAC55300799F4A /* SummaryViewController.swift in Sources */,
+				D1C0AD8E20FACB5400799F4A /* ProvinceViewController.swift in Sources */,
 				D1C0AD7C20FAC55300799F4A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

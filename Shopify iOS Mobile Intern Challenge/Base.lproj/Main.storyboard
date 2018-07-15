@@ -1,24 +1,224 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ScY-du-Bpg">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Order Summary-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="SummaryViewController" customModule="Shopify_iOS_Mobile_Intern_Challenge" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dvL-FS-dck" userLabel="Container">
+                                <rect key="frame" x="16" y="132" width="343" height="519"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="ra1-OB-1e2">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="519"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="axj-2x-COH" userLabel="Province View">
+                                                <rect key="frame" x="0.0" y="0.0" width="343" height="251.5"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="VsT-kW-Dad">
+                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="251.5"/>
+                                                        <subviews>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6lP-Fw-mst" userLabel="Province Title View">
+                                                                <rect key="frame" x="0.0" y="0.0" width="343" height="42"/>
+                                                                <subviews>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="93b-XW-tVW">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="42"/>
+                                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
+                                                                        <state key="normal" title="  Order By Province">
+                                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        </state>
+                                                                        <connections>
+                                                                            <action selector="orderByProvinceButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="a6D-Qf-l7c"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                </subviews>
+                                                                <color key="backgroundColor" red="0.29803921570000003" green="0.58431372550000005" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="trailing" secondItem="93b-XW-tVW" secondAttribute="trailing" id="7X2-u4-H7y"/>
+                                                                    <constraint firstItem="93b-XW-tVW" firstAttribute="leading" secondItem="6lP-Fw-mst" secondAttribute="leading" id="Fty-5W-7Wn"/>
+                                                                    <constraint firstItem="93b-XW-tVW" firstAttribute="top" secondItem="6lP-Fw-mst" secondAttribute="top" id="bhO-6Y-q5s"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="93b-XW-tVW" secondAttribute="bottom" id="nJ9-gD-JwO"/>
+                                                                </constraints>
+                                                            </view>
+                                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NkY-uB-8ds" userLabel="Province Table View">
+                                                                <rect key="frame" x="0.0" y="42" width="343" height="209.5"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <prototypes>
+                                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="provinceCell" id="OOc-Oc-TBa">
+                                                                        <rect key="frame" x="0.0" y="28" width="343" height="44"/>
+                                                                        <autoresizingMask key="autoresizingMask"/>
+                                                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OOc-Oc-TBa" id="z9W-fJ-JmH">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
+                                                                            <autoresizingMask key="autoresizingMask"/>
+                                                                        </tableViewCellContentView>
+                                                                    </tableViewCell>
+                                                                </prototypes>
+                                                            </tableView>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="NkY-uB-8ds" firstAttribute="height" secondItem="6lP-Fw-mst" secondAttribute="height" multiplier="5:1" id="OKs-w7-7Dw"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="VsT-kW-Dad" firstAttribute="top" secondItem="axj-2x-COH" secondAttribute="top" id="Sar-JK-qbr"/>
+                                                    <constraint firstItem="VsT-kW-Dad" firstAttribute="leading" secondItem="axj-2x-COH" secondAttribute="leading" id="T0C-JS-ZN8"/>
+                                                    <constraint firstAttribute="bottom" secondItem="VsT-kW-Dad" secondAttribute="bottom" id="gue-Wb-86e"/>
+                                                    <constraint firstAttribute="trailing" secondItem="VsT-kW-Dad" secondAttribute="trailing" id="wpz-lH-rET"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PUy-Dx-eaH" userLabel="Year View">
+                                                <rect key="frame" x="0.0" y="267.5" width="343" height="251.5"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="E2O-qV-JOf">
+                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="251.5"/>
+                                                        <subviews>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mNB-Cu-m4s" userLabel="Year Title View">
+                                                                <rect key="frame" x="0.0" y="0.0" width="343" height="42"/>
+                                                                <subviews>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gEK-1L-2mJ">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="42"/>
+                                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
+                                                                        <state key="normal" title="  Order By Year">
+                                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        </state>
+                                                                    </button>
+                                                                </subviews>
+                                                                <color key="backgroundColor" red="0.29803921570000003" green="0.58431372550000005" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <constraints>
+                                                                    <constraint firstItem="gEK-1L-2mJ" firstAttribute="top" secondItem="mNB-Cu-m4s" secondAttribute="top" id="QPn-r2-PZu"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="gEK-1L-2mJ" secondAttribute="trailing" id="hoc-pX-xeJ"/>
+                                                                    <constraint firstItem="gEK-1L-2mJ" firstAttribute="leading" secondItem="mNB-Cu-m4s" secondAttribute="leading" id="nRu-nb-3Ja"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="gEK-1L-2mJ" secondAttribute="bottom" id="ui8-1d-AQR"/>
+                                                                </constraints>
+                                                            </view>
+                                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0sG-Uo-Fia" userLabel="Year Table View">
+                                                                <rect key="frame" x="0.0" y="42" width="343" height="209.5"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <prototypes>
+                                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="yearCell" id="f4w-Ms-UEH">
+                                                                        <rect key="frame" x="0.0" y="28" width="343" height="44"/>
+                                                                        <autoresizingMask key="autoresizingMask"/>
+                                                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="f4w-Ms-UEH" id="3rM-AS-PwO">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
+                                                                            <autoresizingMask key="autoresizingMask"/>
+                                                                        </tableViewCellContentView>
+                                                                    </tableViewCell>
+                                                                </prototypes>
+                                                            </tableView>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="0sG-Uo-Fia" firstAttribute="height" secondItem="mNB-Cu-m4s" secondAttribute="height" multiplier="5:1" id="nfs-QX-ekR"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="E2O-qV-JOf" secondAttribute="trailing" id="Hyd-t5-h8d"/>
+                                                    <constraint firstAttribute="bottom" secondItem="E2O-qV-JOf" secondAttribute="bottom" id="PWI-7d-oMj"/>
+                                                    <constraint firstItem="E2O-qV-JOf" firstAttribute="top" secondItem="PUy-Dx-eaH" secondAttribute="top" id="aBa-12-GWw"/>
+                                                    <constraint firstItem="E2O-qV-JOf" firstAttribute="leading" secondItem="PUy-Dx-eaH" secondAttribute="leading" id="oSq-Uc-NAl"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="ra1-OB-1e2" secondAttribute="trailing" id="07y-cB-1Eu"/>
+                                    <constraint firstItem="ra1-OB-1e2" firstAttribute="leading" secondItem="dvL-FS-dck" secondAttribute="leading" id="61T-Yp-bGE"/>
+                                    <constraint firstItem="ra1-OB-1e2" firstAttribute="top" secondItem="dvL-FS-dck" secondAttribute="top" id="KS9-Le-qyf"/>
+                                    <constraint firstAttribute="bottom" secondItem="ra1-OB-1e2" secondAttribute="bottom" id="iId-Nj-OYf"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="dvL-FS-dck" secondAttribute="bottom" constant="16" id="Jjy-gM-6VY"/>
+                            <constraint firstItem="dvL-FS-dck" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Qmv-Eh-ut8"/>
+                            <constraint firstItem="dvL-FS-dck" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="SoP-v6-jmL"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dvL-FS-dck" secondAttribute="trailing" constant="16" id="fnk-Kp-ZSr"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Order Summary" id="U2u-Hi-cVg"/>
+                    <connections>
+                        <outlet property="provinceTableView" destination="NkY-uB-8ds" id="0dJ-jM-sJ4"/>
+                        <outlet property="provinceView" destination="axj-2x-COH" id="ekI-2Z-lzB"/>
+                        <outlet property="yearTableView" destination="0sG-Uo-Fia" id="oxI-0C-Mhr"/>
+                        <outlet property="yearView" destination="PUy-Dx-eaH" id="B66-rI-UNf"/>
+                        <segue destination="WTw-cZ-RcB" kind="show" id="iKX-Rj-7pr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1076" y="133.5832083958021"/>
+        </scene>
+        <!--Order By Province-->
+        <scene sceneID="Toc-x9-tSY">
+            <objects>
+                <tableViewController id="WTw-cZ-RcB" customClass="ProvinceViewController" customModule="Shopify_iOS_Mobile_Intern_Challenge" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="UID-Zf-JKR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="sMC-4M-B84">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="sMC-4M-B84" id="Vqq-1h-J9a">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="WTw-cZ-RcB" id="ju7-em-ZyM"/>
+                            <outlet property="delegate" destination="WTw-cZ-RcB" id="H3a-hw-Qbr"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Order By Province" id="xQM-PI-7pV"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x22-0h-yfi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1956" y="134"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="BAq-nB-ix9">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ScY-du-Bpg" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="fcL-pJ-TaR">
+                        <rect key="frame" x="0.0" y="20" width="375" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" red="0.29803921570000003" green="0.58431372550000005" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="oNQ-9Z-EOE"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u6E-zp-uu8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="178" y="134"/>
         </scene>
     </scenes>
 </document>
