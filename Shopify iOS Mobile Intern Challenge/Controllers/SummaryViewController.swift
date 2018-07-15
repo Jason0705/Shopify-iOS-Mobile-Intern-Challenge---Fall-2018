@@ -10,7 +10,7 @@ import UIKit
 
 class SummaryViewController: UIViewController {
     
-    //let getOrderData = GetOrderData()
+    let getOrderData = GetOrderData()
     
     
     @IBOutlet weak var provinceView: UIView!
@@ -23,8 +23,7 @@ class SummaryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        //print(getOrderData.data)
-        print("1")
+        getOrderData.getOrderData()
     }
 
     

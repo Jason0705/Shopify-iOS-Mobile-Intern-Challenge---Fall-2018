@@ -12,26 +12,28 @@ import SwiftyJSON
 
 class GetOrderData {
     
-    //var data : JSON = []
+    var data : JSON = []
     
     
     // MARK: - Networking
     
     // getOrderData Method
-//    func getOrderData() {
-//        Alamofire.request("https://shopicruit.myshopify.com/admin/orders.json?page=1&access_token=c32313df0d0ef512ca64d5b336a0d7c6", method: .get).responseJSON {
-//            response in
-//            if response.result.isSuccess{
-//                let orderJSON : JSON = JSON(response.result.value!)
-//                self.data = orderJSON
-//                print(orderJSON)
-//            } else {
-//                print("Couldnt process JSON response, Error: \(response.result.error)")
-//            }
-//        }
-//    }
+    func getOrderData() {
+        Alamofire.request("https://shopicruit.myshopify.com/admin/orders.json?page=1&access_token=c32313df0d0ef512ca64d5b336a0d7c6", method: .get).responseJSON {
+            response in
+            if response.result.isSuccess{
+                let orderJSON : JSON = JSON(response.result.value!)
+                self.data = orderJSON
+                print(orderJSON)
+            } else {
+                print("Couldnt process JSON response, Error: \(response.result.error)")
+            }
+        }
+    }
     
     
     // MARK: - JSON Parsing
+    
+    
     
 }
