@@ -15,8 +15,10 @@ class GetOrderData {
     let orderDataModel = OrderDataModel()
     
     
-    //var data : JSON = []
     var orderDict: [(orderProvince: String, orderYear: String, orderNumber: String, totalPrice: String, customerName: String)] = []
+    var groupedProvDict = [String : [(orderProvince: String, orderYear: String, orderNumber: String, totalPrice: String, customerName: String)]]()
+    var groupedYearDict = [String : [(orderProvince: String, orderYear: String, orderNumber: String, totalPrice: String, customerName: String)]]()
+    var sortedProvDict: [(key:String, value: [(orderProvince: String, orderYear: String, orderNumber: String, totalPrice: String, customerName: String)])] = []
     
     
     // MARK: - Networking
@@ -28,11 +30,7 @@ class GetOrderData {
             response in
             if response.result.isSuccess{
                 let orderJSON : JSON = JSON(response.result.value!)
-                //self.data = orderJSON
-                //print(orderJSON)
                 self.createOrderDict(with: orderJSON)
-                print("success")
-                //print(self.orderDict)
             } else {
                 print("Couldnt process JSON response, Error: \(response.result.error)")
             }
@@ -76,6 +74,23 @@ class GetOrderData {
             
         }
         
+        groupByProvince()
+        groupByYear()
+        sortProvinces()
+        
+    }
+    
+    
+    func groupByProvince() {
+        groupedProvDict = Dictionary(grouping: orderDict) { $0.orderProvince }
+    }
+    
+    func groupByYear() {
+        groupedYearDict = Dictionary(grouping: orderDict) { $0.orderYear }
+    }
+    
+    func sortProvinces() {
+        sortedProvDict = groupedProvDict.sorted(by: { $0.0 < $1.0 })
     }
     
 }
