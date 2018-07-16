@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import ChameleonFramework
 
 class SummaryViewController: UIViewController {
     
@@ -49,9 +50,6 @@ class SummaryViewController: UIViewController {
         
         getOrderData()
         
-        // Style
-        Shadow()
-        
         // Set self as Delegate and Datasource
         provinceTableView.delegate = self
         provinceTableView.dataSource = self
@@ -61,6 +59,11 @@ class SummaryViewController: UIViewController {
         
         // Register OrderCell.xib
         yearTableView.register(UINib(nibName: "OrderCell", bundle: nil), forCellReuseIdentifier: "customOrderCell")
+        
+        // UI Style
+        Shadow()
+        provinceTableView.separatorColor = UIColor(hexString: "85C842")
+        yearTableView.separatorColor = UIColor(hexString: "85C842")
     }
     
     
@@ -229,6 +232,7 @@ extension SummaryViewController: UITableViewDelegate, UITableViewDataSource {
             cell.orderNumberLabel.text = "Order: #\(cellData.orderNumber)"
             cell.priceLabel.text = "Price: $\(cellData.totalPrice)"
             cell.customerNameLabel.text = "Customer: \(cellData.customerName)"
+            cell.indexLabel.text = "\(indexPath.row + 1)"
             return cell
         }
         return UITableViewCell()
@@ -269,7 +273,7 @@ extension SummaryViewController: UITableViewDelegate, UITableViewDataSource {
         let header = view as! UITableViewHeaderFooterView
         header.textLabel?.font = UIFont.systemFont(ofSize: 20, weight: UIFont.Weight.medium);
         header.textLabel?.textColor = UIColor.white
-        header.contentView.backgroundColor = UIColor(red:0.52, green:0.78, blue:0.25, alpha:1.0)
+        header.contentView.backgroundColor = UIColor(hexString: "85C842")
     }
     
 }

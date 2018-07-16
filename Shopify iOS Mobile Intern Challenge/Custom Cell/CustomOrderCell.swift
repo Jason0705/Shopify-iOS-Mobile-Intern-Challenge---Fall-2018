@@ -13,6 +13,7 @@ class CustomOrderCell: UITableViewCell {
     @IBOutlet weak var orderNumberLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var customerNameLabel: UILabel!
+    @IBOutlet weak var indexLabel: UILabel!
     
     
 //    override func awakeFromNib() {

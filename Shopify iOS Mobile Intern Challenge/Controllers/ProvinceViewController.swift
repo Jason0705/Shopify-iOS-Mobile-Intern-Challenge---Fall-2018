@@ -21,6 +21,9 @@ class ProvinceViewController: UITableViewController {
         
         // Register OrderCell.xib
         tableView.register(UINib(nibName: "OrderCell", bundle: nil), forCellReuseIdentifier: "customOrderCell")
+        
+        // UI Style
+        tableView.separatorColor = UIColor(hexString: "85C842")
     }
 
 
@@ -44,6 +47,7 @@ class ProvinceViewController: UITableViewController {
         cell.orderNumberLabel.text = "Order: #\(cellData.orderNumber)"
         cell.priceLabel.text = "Price: $\(cellData.totalPrice)"
         cell.customerNameLabel.text = "Customer: \(cellData.customerName)"
+        cell.indexLabel.text = "\(indexPath.row + 1)"
         return cell
     }
     
@@ -76,7 +80,7 @@ class ProvinceViewController: UITableViewController {
         let header = view as! UITableViewHeaderFooterView
         header.textLabel?.font = UIFont.systemFont(ofSize: 20, weight: UIFont.Weight.medium);
         header.textLabel?.textColor = UIColor.white
-        header.contentView.backgroundColor = UIColor(red:0.52, green:0.78, blue:0.25, alpha:1.0)
+        header.contentView.backgroundColor = UIColor(hexString: "85C842")
     }
 
 }

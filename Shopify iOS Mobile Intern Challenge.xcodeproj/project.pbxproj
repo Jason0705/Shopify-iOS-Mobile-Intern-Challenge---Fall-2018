@@ -90,10 +90,9 @@
 				D1C0AD8F20FAD94500799F4A /* Model */,
 				D1C0AD9020FAD94F00799F4A /* View */,
 				D1C0AD9120FAD95600799F4A /* Controllers */,
+				D1FBFF8520FC67890063F7F5 /* Custom Cell */,
 				D1C0AD9220FAD96100799F4A /* Supporting File */,
 				D1C0AD8720FAC55400799F4A /* Info.plist */,
-				D1FBFF8120FC289B0063F7F5 /* CustomOrderCell.swift */,
-				D1FBFF8220FC289B0063F7F5 /* OrderCell.xib */,
 			);
 			path = "Shopify iOS Mobile Intern Challenge";
 			sourceTree = "<group>";
@@ -130,6 +129,15 @@
 				D1C0AD8420FAC55400799F4A /* LaunchScreen.storyboard */,
 			);
 			path = "Supporting File";
+			sourceTree = "<group>";
+		};
+		D1FBFF8520FC67890063F7F5 /* Custom Cell */ = {
+			isa = PBXGroup;
+			children = (
+				D1FBFF8120FC289B0063F7F5 /* CustomOrderCell.swift */,
+				D1FBFF8220FC289B0063F7F5 /* OrderCell.xib */,
+			);
+			path = "Custom Cell";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,11 +236,13 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Shopify iOS Mobile Intern Challenge/Pods-Shopify iOS Mobile Intern Challenge-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
