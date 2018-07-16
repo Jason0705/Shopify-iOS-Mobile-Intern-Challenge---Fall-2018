@@ -12,6 +12,7 @@ import SwiftyJSON
 
 class SummaryViewController: UIViewController {
     
+    //MARK: - Struct order data
     struct OrderData {
         var orderProvince = ""
         var orderYear = ""
@@ -21,7 +22,8 @@ class SummaryViewController: UIViewController {
     }
     
     
-    // Constants & Variables
+    
+    //MARK: - Constants & Variables
     let orderDataModel = OrderDataModel()
     
     var orderDict = [OrderData]()
@@ -31,7 +33,8 @@ class SummaryViewController: UIViewController {
     var firstTen2017Orders = [OrderData]()
     
     
-    // Outlets
+    
+    //MARK: - Outlets
     @IBOutlet weak var provinceView: UIView!
     @IBOutlet weak var yearView: UIView!
     
@@ -39,6 +42,8 @@ class SummaryViewController: UIViewController {
     @IBOutlet weak var yearTableView: UITableView!
     
     
+    
+    // MARK: - View Did Load
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -53,6 +58,9 @@ class SummaryViewController: UIViewController {
         
         yearTableView.delegate = self
         yearTableView.dataSource = self
+        
+        // Register OrderCell.xib
+        yearTableView.register(UINib(nibName: "OrderCell", bundle: nil), forCellReuseIdentifier: "customOrderCell")
     }
     
     
@@ -208,22 +216,27 @@ extension SummaryViewController: UITableViewDelegate, UITableViewDataSource {
     
     // Cell for row at indexPath
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell = UITableViewCell()
         
         if tableView == self.provinceTableView {
-            cell = provinceTableView.dequeueReusableCell(withIdentifier: "provinceCell", for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: "provinceCell", for: indexPath)
             let cellData = sortedProvDict[indexPath.section]
             cell.textLabel?.text = "\(cellData.value.count) orders in \(cellData.key)"
             return cell
         }
         else if tableView == self.yearTableView {
-            cell = yearTableView.dequeueReusableCell(withIdentifier: "yearCell", for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: "customOrderCell", for: indexPath) as! CustomOrderCell
             let cellData = firstTen2017Orders[indexPath.row]
-            cell.textLabel?.text = "Order: #\(cellData.orderNumber) | Price: $\(cellData.totalPrice) | Customer: \(cellData.customerName)"
-            cell.textLabel?.numberOfLines = 0
+            cell.orderNumberLabel.text = "Order: #\(cellData.orderNumber)"
+            cell.priceLabel.text = "Price: $\(cellData.totalPrice)"
+            cell.customerNameLabel.text = "Customer: \(cellData.customerName)"
             return cell
         }
-        return cell
+        return UITableViewCell()
+    }
+    
+    // Height for row at indexPath
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 50
     }
     
     // Did select row at indexPath

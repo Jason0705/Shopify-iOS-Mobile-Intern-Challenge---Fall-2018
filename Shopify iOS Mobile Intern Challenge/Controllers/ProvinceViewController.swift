@@ -10,12 +10,17 @@ import UIKit
 
 class ProvinceViewController: UITableViewController {
     
-    // Variable
+    //MARK: - Variable
     var sortedProvDict: [(key:String, value: [SummaryViewController.OrderData])] = []
     
     
+    
+    //MARK: - View Did Load
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Register OrderCell.xib
+        tableView.register(UINib(nibName: "OrderCell", bundle: nil), forCellReuseIdentifier: "customOrderCell")
     }
 
 
@@ -34,11 +39,17 @@ class ProvinceViewController: UITableViewController {
     
     // Cell for row at indexPath
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "customOrderCell", for: indexPath) as! CustomOrderCell
         let cellData = sortedProvDict[indexPath.section].value[indexPath.row]
-        cell.textLabel?.text = "Order: #\(cellData.orderNumber) | Price: $\(cellData.totalPrice) | Customer: \(cellData.customerName)"
-        cell.textLabel?.numberOfLines = 0
+        cell.orderNumberLabel.text = "Order: #\(cellData.orderNumber)"
+        cell.priceLabel.text = "Price: $\(cellData.totalPrice)"
+        cell.customerNameLabel.text = "Customer: \(cellData.customerName)"
         return cell
+    }
+    
+    // Height for row at indexPath
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 50
     }
     
     // Did select row at indexPath
